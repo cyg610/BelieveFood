@@ -44,6 +44,27 @@
 
 ![그림6](https://user-images.githubusercontent.com/39265738/113585281-fc615580-9666-11eb-9215-f91f0057fae1.png)
 
+![캡처5](https://user-images.githubusercontent.com/39265738/113586784-e05eb380-9668-11eb-94ad-de6290faa82c.JPG)
+
+
+
+5. 소스코드
+
+5-1. 주문 후 실행되는 소스코드
+
+
+![캡처1](https://user-images.githubusercontent.com/39265738/113586314-50b90500-9668-11eb-9130-374640e732cf.JPG)
+
+주문 내역 받으면 데이터베이스에 저장하고, 사용자의 메일로 주문내용을 전송합니다.
+
+5-2. 게시글 소스코드
+
+![캡처4](https://user-images.githubusercontent.com/39265738/113586321-51ea3200-9668-11eb-8d45-d947613676dc.JPG)
+
+![캡처2](https://user-images.githubusercontent.com/39265738/113586319-51ea3200-9668-11eb-89b7-2682820d62bd.JPG)
+
+post 함수를 통해 데이터베이스에 저장된 데이터를 불러 온 후 바인딩합니다.
+
 
 
 
