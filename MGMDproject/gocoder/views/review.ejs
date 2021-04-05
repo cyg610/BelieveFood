@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>빌리풋</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
+    <link rel="stylesheet" href="/stylesheets/mycss.css"/>
+  </head>
+  <body>
+    <div id="MM_review">
+      <div id="top">
+        <img class="logo" src="/images/logo.png"/>
+        <nav>
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/product">PRODUCT</a></li>
+            <li><a href="/order">ORDER</a></li>
+            <li><a href="/board/review">REVIEW</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="body"> 
+        <div class="review_title">
+          고객님들의 후기
+        </div>
+        <div clss="review_contents">
+
+          <%
+          for(var i = (page * page_num) - page_num; i < (page * page_num); i++) {
+          if(i > length){
+              i++;
+          }else{
+              var data = rows[i]
+          %>
+          <div class="review_table">
+
+
+             <details class="review_content_block">
+              <summary class="review_title_block accordion">
+                <span class="review_title_span"><%=data.title%></span><span class="review_star_span"><% for (var o=1; o <= data.star; o++){%> <img class="star_img" src="/images/star.png"> <%}%></span>
+              </summary>
+           
+                  <div class="review_ordered_product"><span>주문내역 : </span> <%=data.ordered_product%></div>
+                  <div> <%=data.content%></div>
+                </details>
+ 
+              
+          </div>
+          <% }
+        }
+        %>
+        
+            <div class="text-center">
+              <ul class="pagination">
+
+              </ul>
+            </div>
+            <div class="review_block">  <a class="btn btn-default review_btn" href="/board/write">글쓰기</a> </div>
+        </div>
+        </div>
+
+    </div>
+    <div id="footer" style="position: absolute; bottom: 0;">
+      ⓒ 2020 MangGoMangDuck Company. All Rights Reserved.
+    </div>
+  </div>
+
+  </body>
+
+
+
+  <script src="js/jquery-3.1.1.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>빌리풋</title>
+    <link rel="stylesheet" href="stylesheets/mycss.css"/>
+  </head>
+  <body>
+    <div id="MM_index">
+      <div id="top">
+        <img class="logo" src="images/logo.png"/>
+        <nav>
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="product">PRODUCT</a></li>
+            <li><a href="order">ORDER</a></li>
+            <li><a href="board/review">REVIEW</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="body">
+        <div class="benner_content">
+          <img class="main_benner" src="images/main_img.png"/>
+        </div>
+
+        <div class="best_content">
+
+          <div class="best_text">
+          *BEST*
+          </div>
+
+          <table class="best_table">
+            <tr>
+              <td>  <img class="best_item_img1" src="images/main_item1.png"/></td>
+              <td>   <div class="best_itme1_detail">
+                  <div class="best_item_title">닭가슴살 오븐구이</div>
+                  <div>닭가슴살이 통째로 사용되어 저지방 고단백 영양분이 가득!</div>
+                  <div>다이어트 간식으로도 최고, 소화흡수에도 최적화 된 간식</div>
+                </div></td>
+            </tr>
+            <tr>
+              <td> <div class="best_itme2_detail">
+                  <div class="best_item_title">닭똥집 오븐구이</div>
+                  <div>닭가슴살이 통째로 사용되어 저지방 고단백 영양분이 가득!</div>
+                  <div>다이어트 간식으로도 최고, 소화흡수에도 최적화 된 간식</div>
+                </div></td>
+                <td><img class="best_item_img2" src="images/main_item2.png"/>  </td>
+            </tr>
+          </table>
+
+      </div>
+
+    </div>
+    <div id="footer">
+      ⓒ 2020 MangGoMangDuck Company. All Rights Reserved.
+    </div>
+  </div>
+
+  </body>
+
+
+    <script type="text/javascript">
+
+  	$(function(){
+  		stickyFooter();
+
+  		$(window).scroll(stickyFooter).resize(stickyFooter);
+  	});
+
+
+  	function stickyFooter(){
+  		document_height = $(document).height(); // 문서 전체 높이
+  		document_scrollTop = $(document).scrollTop(); // 문서 전체 높이 중 스크롤 위치
+  		window_height = $(window).height(); // 창 높이
+  		footer_height = $("#footer").height();
+
+  		gap = document_height - footer_height - window_height;
+  		bottom = document_scrollTop - gap ;
+
+  		if(document_scrollTop > gap){
+  			$("#footer").css("bottom", bottom+"px");
+  		}else{
+  			$("#footer").css("bottom","0");
+  		}
+  	}
+  </script>
+
+
+</html>

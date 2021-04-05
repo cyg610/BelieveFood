@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>빌리풋</title>
+    <link rel="stylesheet" href="/stylesheets/mycss.css"/>
+  </head>
+  <body>
+    <div id="MM_order">
+      <div id="top">
+        <img class="logo" src="/images/logo.png"/>
+        <nav>
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="product">PRODUCT</a></li>
+            <li><a href="order">ORDER</a></li>
+            <li><a href="board/review">REVIEW</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="body">
+        <div class="order_procedure">
+          <div class="order_procedure_title">주문제작 절차</div>
+          <div class="order_procedure_imgblock">
+            <img class="order_procedure_img" src="/images/order_procedure.png"/>
+          </div>
+        </div>
+        <div class="order_contents">
+          <form  method="post" action="/order/sendemail">
+           <div class="order_contents_title">주문하기</div>
+
+           <div class="order_name"><span>주문자명</span> <input type="text" name="name" /></div>
+            <div class="order_mail"><span>이메일</span> <input name="email" type="text" /></div>
+
+           <div class="order_selection_menu">
+             <span>주메뉴</span>
+             <select name="menu">
+               <option value="X">선택안함</option>
+               <option value="소고기">소고기</option>
+               <option value="닭고기">닭고기</option>
+                <option value="돼지고기">돼지고기</option>
+                <option value="생선류">생선류</option>
+                <option value="단호박">단호박</option>
+                <option value="고구마">고구마</option>
+              </select>
+            </div>
+            <div class="order_selection_menu">
+              <span>연령대</span>
+              <select name="age">
+                <option value="X">선택안함</option>
+                <option value="생후 100일미만">생후 100일 미만</option>
+                <option value="일반">일반</option>
+                <option value="노견">노견</option>
+              </select>
+            </div>
+            <div  class="order_radio">
+              <div class="order_radio_title">특이사항</div>
+              <table class="order_radio_table">
+              <tr>
+                <td class="columns1"><label><input type="radio" name="option" value="다이어트를 원합니다"/> 다이어트를 원합니다</label></td>
+                <td><label><input type="radio" name="option" value="몸이 아파요"/> 몸이 아파요</label></td>
+           </tr>
+            <tr>
+              <td class="columns1"><label><input type="radio" name="option" value="힘이 될만한 음식을 원해요"/> 힘이 될만한 음식을 원해요</label></td>
+             <td><label><input type="radio" name="option" value="알레르기가 있어요"/> 알레르기가 있어요</label></td>
+            </tr>
+            <tr>
+             <td class="columns1"><label><input type="radio" name="option" value="나이가 많아요"/> 나이가 많아요</label></td>
+            </tr>
+            </table>
+
+            </div>
+
+              <div>
+                <div class="order_textarea_title">구체적인 세부사항을 적어주세요</div>
+               <textarea class="order_textarea" name="detail" cols="110" rows="10">예) 밀 알레르기가 있어요</textarea>
+             </div>
+              <div class="submit_div">
+                <button class="submit_btn" type="submit" name="submit">주문하기</button>
+               <!-- <button class="href_btn" ><a href="/listorder" >주문조회</a></button>-->
+             </div>
+          </form>
+        </div>
+
+    </div>
+    <div id="footer">
+      ⓒ 2020 MangGoMangDuck Company. All Rights Reserved.
+    </div>
+  </div>
+
+  </body>
+
+
+    <script type="text/javascript">
+
+  	$(function(){
+  		stickyFooter();
+
+  		$(window).scroll(stickyFooter).resize(stickyFooter);
+  	});
+
+
+  	function stickyFooter(){
+  		document_height = $(document).height(); // 문서 전체 높이
+  		document_scrollTop = $(document).scrollTop(); // 문서 전체 높이 중 스크롤 위치
+  		window_height = $(window).height(); // 창 높이
+  		footer_height = $("#footer").height();
+
+  		gap = document_height - footer_height - window_height;
+  		bottom = document_scrollTop - gap ;
+
+  		if(document_scrollTop > gap){
+  			$("#footer").css("bottom", bottom+"px");
+  		}else{
+  			$("#footer").css("bottom","0");
+  		}
+  	}
+  </script>
+
+
+</html>
